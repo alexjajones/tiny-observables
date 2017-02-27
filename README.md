@@ -1,4 +1,4 @@
-## tiny-observables 🔍
+## tiny-observables 👓
 > Super light weight (less than 3kb) RXJS inspired observable library.
 
 - **Light Weight:** under 3kb 
