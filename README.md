@@ -1,11 +1,13 @@
 ## tiny-observables 👓
-> Super light weight 900b RXJS inspired observable library.
+> Super light weight 1.5kb RXJS inspired observable library.
 
-- **Light Weight:** only 900b when minified & gzipped
+- **Light Weight:** only 1.5kb when minified & gzipped
 - **RXJS Inspired:** familiar interface
 - **Modern:** written in ES2015 and compiled
+- **Zero Dependencies**: Just plain ol' JS
 - **Extendable:** simple api for introducing new operators
 - **Standards**: adheres to traditional observable guarantees
+- **Webpack**: bundled with webpack
 
 ---------------------------------------
 
@@ -21,6 +23,13 @@
 
 ---------------------------------------
 
+## Building locally
+
+`npm install`
+
+`npm run build:dev`
+
+---------------------------------------
 
 ##License
 

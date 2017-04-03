@@ -1,14 +1,6 @@
-class Observe {
-    constructor(_action) { this.action = _action; }
+import {Observe} from "./index";
 
-    subscribe(next = this.__noop__, error = this.__noop__, complete = this.__noop__) {
-        let observer = new Observer({next, error, complete});
-
-        observer.unsub = this.action(observer);
-
-        return observer.unsubscribe.bind(observer);
-    }
-
+export class Operators {
     map(fn) {
         return this.__operator_factory__(obs => val => obs.next(fn(val)));
     }
@@ -70,49 +62,4 @@ class Observe {
     }
 
     __noop__() {}
-}
-
-class Observer {
-    subscribed = true;
-
-    constructor(subscription) { this.subscription = subscription; }
-
-    next(val) {
-        if (this.subscribed)
-            this.__try__(() => this.subscription.next(val));
-    }
-
-    error(err) {
-        if (this.subscribed)
-            this.__try__(() => {
-                this.subscription.error(err);
-                this.unsubscribe()
-            });
-    }
-
-    complete() {
-        if (this.subscribed)
-            this.__try__(() => {
-                this.subscription.complete();
-                this.unsubscribe()
-            });
-    }
-
-    unsubscribe() {
-        this.subscribed = false;
-
-        if (this.unsub) {
-            this.unsub();
-        }
-    }
-
-    __try__(fn) {
-        try {
-            fn()
-        }
-        catch (err) {
-            this.unsubscribe();
-            throw err;
-        }
-    }
 }
