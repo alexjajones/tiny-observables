@@ -1,4 +1,4 @@
-## tiny-observables 👓
+## 👓 tiny-observables
 > Super light weight 1.5kb RXJS inspired observable library.
 
 - **Light Weight:** only 1.5kb when minified & gzipped
@@ -9,7 +9,6 @@
 - **Standards**: adheres to traditional observable guarantees
 - **Webpack**: bundled with webpack
 
----------------------------------------
 
 ## Operators supported
 
@@ -21,15 +20,14 @@
 - Throttle
 - Debounce
 
----------------------------------------
 
 ## Installation
 
-`npm install`
+```
+npm install
 
-`npm run build:dev`
-
----------------------------------------
+npm run build:dev
+```
 
 ## Contributing
 > Size matters baby!
@@ -42,7 +40,6 @@ Make sure you account for ever byte you submit.
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request!
 
----------------------------------------
 
 ## License
 
